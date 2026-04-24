@@ -1,0 +1,16 @@
+anurag018@ANURAG:~$ cd ~
+anurag018@ANURAG:~$ touch index.html
+anurag018@ANURAG:~$ echo "<html><body><h1>Welcome to the Web Server</h1></body></html>" > index.html
+anurag018@ANURAG:~$ ls -l index.html
+-rw-r--r-- 1 anurag018 anurag018 61 Apr 24 04:49 index.html
+anurag018@ANURAG:~$ chmod 777 index.html
+anurag018@ANURAG:~$ ls -l index.html
+-rwxrwxrwx 1 anurag018 anurag018 61 Apr 24 04:49 index.html
+anurag018@ANURAG:~$ sudo chown www-data:www-data index.html
+anurag018@ANURAG:~$ ls -l index.html
+-rwxrwxrwx 1 www-data www-data 61 Apr 24 04:49 index.html
+anurag018@ANURAG:~$ chmod 755 index.html
+chmod: changing permissions of 'index.html': Operation not permitted
+anurag018@ANURAG:~$ sudo chmod 755 index.html
+anurag018@ANURAG:~$ ls -l index.html
+-rwxr-xr-x 1 www-data www-data 61 Apr 24 04:49 index.html
