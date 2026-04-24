@@ -1,0 +1,52 @@
+anurag018@ANURAG:~$ whoami
+anurag018
+anurag018@ANURAG:~$ who
+anurag018 pts/1        2026-04-24 04:41
+anurag018@ANURAG:~$ w
+ 04:42:10 up 0 min,  1 user,  load average: 0.11, 0.03, 0.01
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU  WHAT
+anurag01 pts/1    -                04:41   21.00s  0.09s  0.06s -bash
+anurag018@ANURAG:~$ last -n 20
+reboot   system boot  6.6.87.2-microso Fri Apr 24 04:41   still running
+reboot   system boot  6.6.87.2-microso Fri Apr 17 08:23 - 04:28 (2+20:05)
+reboot   system boot  6.6.87.2-microso Fri Mar 27 08:31 - 04:28 (23+19:57)
+reboot   system boot  6.6.87.2-microso Fri Mar 20 08:53 - 16:32  (07:39)
+reboot   system boot  6.6.87.2-microso Fri Mar 20 08:31 - 08:49  (00:17)
+reboot   system boot  6.6.87.2-microso Thu Mar 19 10:24 - 10:24  (00:00)
+reboot   system boot  6.6.87.2-microso Thu Mar 19 10:24 - 10:24  (00:00)
+reboot   system boot  6.6.87.2-microso Thu Mar 19 10:23 - 10:23  (00:00)
+reboot   system boot  6.6.87.2-microso Mon Mar 16 08:24 - 11:00  (02:36)
+reboot   system boot  6.6.87.2-microso Fri Feb 20 09:24 - 10:15  (00:50)
+reboot   system boot  6.6.87.2-microso Fri Feb 20 09:23 - 09:24  (00:00)
+reboot   system boot  6.6.87.2-microso Fri Feb 20 09:23 - 09:23  (00:00)
+
+wtmp begins Fri Feb 20 09:23:24 2026
+anurag018@ANURAG:~$ uname -a
+Linux ANURAG 6.6.87.2-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Thu Jun  5 18:30:46 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
+anurag018@ANURAG:~$ hostname
+ANURAG
+anurag018@ANURAG:~$ uptime
+ 04:43:59 up 2 min,  1 user,  load average: 0.07, 0.05, 0.01
+anurag018@ANURAG:~$ sudo groupadd developers
+[sudo] password for anurag018:
+Sorry, try again.
+[sudo] password for anurag018:
+groupadd: group 'developers' already exists
+anurag018@ANURAG:~$ sudo groupadd qa
+anurag018@ANURAG:~$ getent group developers
+developers:x:1001:
+anurag018@ANURAG:~$ getent group qa
+qa:x:1004:
+anurag018@ANURAG:~$ sudo useradd -m -G developers aman
+anurag018@ANURAG:~$ sudo useradd -m -G developers ritu
+anurag018@ANURAG:~$ sudo useradd -m -G qa karan
+anurag018@ANURAG:~$ id aman
+uid=1001(aman) gid=1005(aman) groups=1005(aman),1001(developers)
+anurag018@ANURAG:~$ id ritu
+uid=1002(ritu) gid=1006(ritu) groups=1006(ritu),1001(developers)
+anurag018@ANURAG:~$ id karan
+uid=1003(karan) gid=1007(karan) groups=1007(karan),1004(qa)
+anurag018@ANURAG:~$ sudo pkill -u ritu
+anurag018@ANURAG:~$ sudo userdel -r ritu
+userdel: ritu mail spool (/var/mail/ritu) not found
+anurag018@ANURAG:~$ id ritu
